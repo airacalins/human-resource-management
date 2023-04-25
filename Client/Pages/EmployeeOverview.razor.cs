@@ -17,6 +17,5 @@ namespace HumanResourceManagement.Client.Pages
     {
       _selectedEmployee = selectedEmployee;
     }
-
   }
 }

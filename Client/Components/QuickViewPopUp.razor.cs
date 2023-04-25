@@ -7,16 +7,16 @@ namespace HumanResourceManagement.Client.Components
     [Parameter]
     public Employee? Employee { get; set; }
 
-    private Employee? _employee;
+    private Employee? _selectedEmployee;
 
     protected override void OnParametersSet()
     {
-      _employee = Employee;
+      _selectedEmployee = Employee;
     }
 
     public void OnClose()
     {
-      _employee = null;
+      _selectedEmployee = null;
     }
   }
 }

@@ -9,5 +9,13 @@ namespace HumanResourceManagement.Client.Components
 
     [Parameter]
     public EventCallback<Employee> OnShowDetailsPopUp { get; set; }
+
+    [Inject]
+    public NavigationManager NavigationManager { get; set; } = default!;
+
+    public void NavigateToDetails(Employee selectedEmployee)
+    {
+      NavigationManager.NavigateTo($"/employees/{selectedEmployee.EmployeeId}");
+    }
   }
 }

@@ -7,9 +7,13 @@
         <div class="card-body">
             <h5 class="card-title py-2">@Employee.FirstName @Employee.LastName</h5>
 
-            <button class="btn btn-primary" onclick="@(async () => await OnShowDetailsPopUp.InvokeAsync(Employee))">
+            <button class="btn btn-primary w-100 mb-2"
+                @onclick="(async () => await OnShowDetailsPopUp.InvokeAsync(Employee))">
                 Quick View
             </button>
+
+            <button class="btn btn-primary w-100 mb-2" @onclick="(() => NavigateToDetails(Employee))">
+                Full Details</button>
         </div>
     </div>
 </div>

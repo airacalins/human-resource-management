@@ -1,4 +1,4 @@
-﻿@if (_employee != null)
+﻿@if (_selectedEmployee != null)
 {
     <div class="modal fade show d-block">
     <div class="modal-dialog">
@@ -17,21 +17,23 @@
                         <div class="form-group row">
                             <label class="col-sm-5 col-form-label">Employee ID</label>
                             <div class="col-sm-7">
-                                <label type="text" class="form-control-plaintext">@_employee.EmployeeId</label>
+                                <label type="text" class="form-control-plaintext">@_selectedEmployee.EmployeeId</label>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="col-sm-5 col-form-label">First name</label>
                             <div class="col-sm-7">
-                                <label type="text" readonly class="form-control-plaintext">@_employee.FirstName</label>
+                                <label type="text" readonly
+                                    class="form-control-plaintext">@_selectedEmployee.FirstName</label>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="col-sm-5 col-form-label">Last name</label>
                             <div class="col-sm-7">
-                                <label type="text" readonly class="form-control-plaintext">@_employee.LastName</label>
+                                <label type="text" readonly
+                                    class="form-control-plaintext">@_selectedEmployee.LastName</label>
                             </div>
                         </div>
 
@@ -39,14 +41,15 @@
                             <label class="col-sm-5 col-form-label">Birthdate</label>
                             <div class="col-sm-7">
                                 <label type="text" readonly
-                                    class="form-control-plaintext">@_employee.BirthDate.ToShortDateString()</label>
+                                    class="form-control-plaintext">@_selectedEmployee.BirthDate.ToShortDateString()</label>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="col-sm-5 col-form-label">Email</label>
                             <div class="col-sm-7">
-                                <label type="text" readonly class="form-control-plaintext">@_employee.Email</label>
+                                <label type="text" readonly
+                                    class="form-control-plaintext">@_selectedEmployee.Email</label>
                             </div>
                         </div>
                     </div>
