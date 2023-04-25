@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components;
 
-namespace HumanResourceManagement.Client.Shared
+namespace HumanResourceManagement.Client.Components
 {
   public partial class EmployeeCard
   {
