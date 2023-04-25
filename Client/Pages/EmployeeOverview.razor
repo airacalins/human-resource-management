@@ -1,0 +1,21 @@
+@page "/employee-overview"
+
+<h2 class="pb-3">Employee Overview</h2>
+
+@if (Employees == null)
+{
+    <p><em>Loading...</em></p>
+}
+
+else
+{
+    <QuickViewPopUp Employee="_selectedEmployee"></QuickViewPopUp>
+
+    <div class="w-100 d-flex">
+    @foreach (var employee in Employees)
+        {
+            <EmployeeCard Employee="employee" OnShowDetailsPopUp="OnShowDetailsPopUp">
+            </EmployeeCard>
+        }
+    </div>
+}

@@ -1,8 +1,8 @@
-﻿namespace BethanysPieShopHRM.Shared.Domain
+﻿namespace HumanResourceManagement.Shared.Domain
 {
-    public class Country
-    {
-        public int CountryId { get; set; }
-        public string Name { get; set; } = string.Empty;
-    }
+  public class Country
+  {
+    public int CountryId { get; set; }
+    public string Name { get; set; } = string.Empty;
+  }
 }
