@@ -13,7 +13,7 @@ namespace HumanResourceManagement.Client.Pages
       Employees = MockDataService.Employees;
     }
 
-    public void OnShowDetailsPopUp(Employee selectedEmployee)
+    public void HandleShowDetailsPopUp(Employee selectedEmployee)
     {
       _selectedEmployee = selectedEmployee;
     }
