@@ -6,7 +6,7 @@ namespace HumanResourceManagement.Client.Pages
   public partial class EmployeeDetails
   {
     [Parameter]
-    public string Id { get; set; }
+    public string Id { get; set; } = String.Empty;
 
     public Employee? Employee { get; set; } = new Employee();
 
