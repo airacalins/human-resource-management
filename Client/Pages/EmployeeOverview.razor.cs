@@ -8,6 +8,8 @@ namespace HumanResourceManagement.Client.Pages
 
     private Employee? _selectedEmployee;
 
+    private string _title = "Employee Overview";
+
     protected override void OnInitialized()
     {
       Employees = MockDataService.Employees;

@@ -1,5 +1,7 @@
 @page "/employees"
 
+<PageTitle>@_title</PageTitle>
+
 <h2 class="pb-3">Employee Overview</h2>
 
 @if (Employees == null)
@@ -14,8 +16,13 @@ else
     <div class="w-100 d-flex">
     @foreach (var employee in Employees)
         {
-            <EmployeeCard Employee="employee" OnShowDetailsPopUp="HandleShowDetailsPopUp">
-            </EmployeeCard>
+            <ErrorBoundary>
+                <ChildContent>
+                    <EmployeeCard Employee="employee" OnShowDetailsPopUp="HandleShowDetailsPopUp">
+                    </EmployeeCard>
+                </ChildContent>
+                <ErrorContent>Invalid Employee!</ErrorContent>
+            </ErrorBoundary>
         }
     </div>
 }

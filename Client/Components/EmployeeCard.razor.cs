@@ -13,6 +13,14 @@ namespace HumanResourceManagement.Client.Components
     [Inject]
     public NavigationManager NavigationManager { get; set; } = default!;
 
+    protected override void OnInitialized()
+    {
+      if (string.IsNullOrEmpty(Employee.LastName))
+      {
+        throw new Exception("Last name can't be empty");
+      }
+    }
+
     public void NavigateToDetails(Employee selectedEmployee)
     {
       NavigationManager.NavigateTo($"/employees/{selectedEmployee.EmployeeId}");
