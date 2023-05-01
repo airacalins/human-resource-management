@@ -12,6 +12,8 @@ builder.Services.AddHttpClient<IEmployeeService, EmployeeService>(client =>
   client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
 );
 
+builder.Services.AddScoped<ApplicationState>();
+
 // builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
 await builder.Build().RunAsync();
