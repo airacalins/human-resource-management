@@ -3,20 +3,20 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// SQLite
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
   options.UseSqlite(
       builder.Configuration["ConnectionStrings:DefaultConnection"]);
 });
 
+// Dependency injection
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<IJobCategoryRepository, JobCategoryRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
+// Cors Policy
 builder.Services.AddCors(options =>
 {
   options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
@@ -46,6 +46,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseBlazorFrameworkFiles();
+
 app.UseStaticFiles();
 
 app.UseRouting();
